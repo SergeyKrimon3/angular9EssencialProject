@@ -1,0 +1,38 @@
+"Variáveis": Armazenam dados que ficam salvos na memória do computador e podem variar conforme o tempo.
+Exemplos: inteiro: x
+          inteiro: y
+          inteiro: soma
+"Constantes" ela também armazena dados que ficam salvos na memória do computador, porém ela tras o dado inteiro e arrendondado.
+Exemplos: const: 3,14 (número do PI) sabemos que o número é muito mais extensão, porém a constante arrendoda ele.
+"Classe": Ela define um tipo de objeto, representando uma estrutura de dados;
+Exemplos: public class Aluno {}
+"Atributos": São as caracteristicas de um objeto, também podem ser chamados de variáveis.
+Exemplos: string: nome;
+          string: curso;
+          int: idade;
+"Metodos": São ações que os objetos podem realizar. São criados definindo seu tipo de retorno, no caso o tipo "void" que 
+significa vazio.
+Exemplos: void assistirAula() {}
+           fazerProva(): void {}
+"Objeto": Um objeto é uma instância criada a partir de uma determinada classe. Após instanciar o obejto é possivel declarar valores
+aos atributos e chamar os métodos.
+Exemplos: public class AlunoTeste { (esta classe representa o objeto, dentro dele chamamos os métodos)
+
+          public static void main (string [] args) {
+
+            Aluno aluno1 = nem Aluno(); (instanciando o obejto)
+
+            aluno1.nome = "Sergey", (declarando valores aos atributos)
+            aluno1.idade = 27,
+            aluno1.trabalho = "Axia"
+
+            aluno1.assistirAula(); (chamando os métodos)
+            aluno1.fazerProva();
+            aluno1.calcularNota();
+          }
+
+}
+
+
+
+

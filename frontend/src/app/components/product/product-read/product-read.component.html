@@ -1,0 +1,54 @@
+<div class="mat-elevation-z8">
+      <!-- [dataSource] É uma configuração de conexão para um banco de dados, trazendo assim as consultas nele contidas.
+      Ou seja, o dataSource é responsável em trazer de meu db.json de nome "products" os objetos criados.-->
+
+      <!-- [dataSource] A maneira mais simples de fornecer dados à tabela é passando uma matriz de dados para a entrada dataSource
+      da tabela. A tabela pegará a matriz e renderizará uma linha para cada objeto na matriz de dados.-->
+      
+    <table mat-table [dataSource]="products">
+      <!-- Id Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let row">{{row.name}}</td>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Preço</th>
+        <td mat-cell *matCellDef="let row">R$ {{row.price}}</td>
+      </ng-container>
+
+       <!-- Date Column -->
+       <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Data</th>
+        <td mat-cell *matCellDef="let row">{{row.date}}</td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let row">
+            <a routerLink="/products/update/{{row.id}}" class="edit">
+                <i class="material-icons">
+                    edit
+                </i>
+            </a>
+            <a routerLink="/products/delete/{{ row.id }}" class="delete">
+                <i class="material-icons">
+                    delete
+                </i>
+            </a>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  

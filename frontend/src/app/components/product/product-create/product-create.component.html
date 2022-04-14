@@ -1,0 +1,46 @@
+    <!-- Template Driven: Este formulário é criado e configurado no próprio HTML, suas validações são feitas todas aqui.-->
+        <mat-card>
+        <mat-card-title>
+            Novo Produto
+        </mat-card-title>
+        <form #f="ngForm">        
+            <mat-form-field>
+                <!-- O [(ngModel)] (two way data binding) é utilizado dentro do input e é responsável em fazer a ligação com o 
+                meu objeto declarado no arquivo ts com o html. Assim quando o usuário alimenta o form, ele faz link -->
+                <input matInput placeholder="Nome"
+                [(ngModel)]="myProduct.name" name="name" 
+                required #name="ngModel"> <!--[patterns]="customPatterns" mask="AAAAAAAAAAAAA"-->                
+            </mat-form-field>   
+                 <!--Diretivas estruturais: Modificam o layout adicionando ou removendo elementos (ngIf e ngFor)--> 
+            <div *ngIf="!name.valid && name.touched" 
+            class="alert alert-danger" role="alert">
+                Nome é obrigatório!
+            </div>       
+            <mat-form-field>
+                <input matInput placeholder="Preço (R$)" 
+                [(ngModel)]="myProduct.price" name="price"
+                required #price="ngModel" mask="separator.2" thousandSeparator="." [allowNegativeNumbers]="true">                
+            </mat-form-field>
+            <div *ngIf="!price.valid && price.touched" 
+            class="alert alert-danger" role="alert">
+                Preço é obrigatório!
+            </div>  
+            <mat-form-field>
+                <input matInput placeholder="Data" 
+                [(ngModel)]="myProduct.date" name="date"
+                required #date="ngModel" mask="d0/M0/0000" [showMaskTyped]="true">                
+            </mat-form-field>
+            <div *ngIf="!date.valid && date.touched" 
+            class="alert alert-danger" role="alert">
+                Data é obrigatório!
+            </div>  
+        </form>
+        <button mat-flat-button (click)="productCreate()" color="primary"
+        [disabled]="!f.valid">Salvar</button>
+        
+        <button mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+    </mat-card>
+
+

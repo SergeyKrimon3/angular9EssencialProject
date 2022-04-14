@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "Martelo",
+      "price": "12,99",
+      "id": 1,
+      "date": "07/04/2022"
+    },
+    {
+      "name": "Chave de Fenda",
+      "price": "9,99",
+      "id": 2,
+      "date": "03/04/2022"
+    },
+    {
+      "name": "Serrote  Dourado",
+      "price": "45,33",
+      "id": 3,
+      "date": "04/04/2022"
+    },
+    {
+      "name": "Sergey",
+      "price": "1.000,11",
+      "date": "12/11/2020",
+      "id": 4
+    }
+  ]
+}

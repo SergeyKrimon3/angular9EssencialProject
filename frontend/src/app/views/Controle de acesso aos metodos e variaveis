@@ -1,0 +1,20 @@
+Controle de acesso aos metodos e variaveis
+
+São padrões de visibilidade de acesso a classes e membros de uma classe (atributos e métodos).
+
+                                        Private| Default| Protected| Public|
+Mesma Classe                              SIM  |   SIM  |    SIM   |  SIM  | 
+Mesmo Pacote                              NÃO  |   SIM  |    SIM   |  SIM  |
+Pacotes Diferentes (subclasses)           NÃO  |   NÃO  |    SIM   |  SIM  |
+Pacotes Diferentes (sem subclasses)       NÃO  |   NÃO  |    NÃO   |  SIM  |
+
+- public     -> Atributos e métodos visíveis em qualquer classe.
+- protected  -> Atributos e métodos visíveis apenas na classe onde são criados.
+- private    -> Atributos e métodos visíveis em classes onde são criados ou herdados.
+
+Membros public, significa que todas as outras classes independentes do pacote ao qual pertencem, podem acessar o objeto em questão.
+
+Membros protect e default funcionam da mesma forma abordada referente a classes, onde default pode ser acessado dentro do 
+mesmo pacote e os membros protect pode ser acessado de pacotes diferentes em caso de herança.
+
+Membros private não podem ser acessados por código em nenhuma outra classe que não aquela qual o membro foi declarado.

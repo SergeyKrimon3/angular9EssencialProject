@@ -1,0 +1,13 @@
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin-top: 25px;
+    margin-right: 15px;
+}
+
+.ng-invalid.ng-touched:not(form) {
+    border: red;
+}

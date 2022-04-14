@@ -1,0 +1,52 @@
+    <!-- Data Driven (Formulário Reativo) Este formulário é criado e configurado no Componente e suas validações também são
+    feitas no Componente. Vantagens: muito mais fléxivel e nao polui o html-->
+<mat-card>
+    <mat-card-title>
+        Novo Produto 2
+    </mat-card-title>
+    <!-- Diretiva formGroup + property bind [] toda vez que o formulário modifica, motifica aqui no html-->
+    <form [formGroup]="productsForm">        
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="myProduct.name" name="name"
+            formControlName="name">   
+        </mat-form-field>  
+        <!--Diretivas estruturais: Modificam o layout adicionando ou removendo elementos (ngIf e ngFor)-->  
+        <!-- Tag <ng-container> é usada quando usamos várias diretivas estruturais-->
+        <ng-container *ngIf="productsForm.controls.name.touched && productsForm.controls.name.errors">
+            <span class="alert alert-danger" role="alert">            
+                Nome é obrigatório!
+            </span>                            
+        </ng-container>                 
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)" [(ngModel)]="myProduct.price" name="price"
+            formControlName="price"
+            mask="separator.2" thousandSeparator="." [allowNegativeNumbers]="false">                          
+        </mat-form-field>
+        <!-- Tag <div> serve para alterar o estilo em partes específicas da página e posicionar objetos-->
+        <div *ngIf="productsForm.controls.price.touched">
+            <div *ngIf="productsForm.controls.price.errors"
+            class="alert alert-danger" role="alert">
+                Preço é obrigatório!
+            </div>                            
+        </div>
+        <mat-form-field>
+            <input matInput placeholder="Data" [(ngModel)]="myProduct.date" name="date"
+            formControlName="date"
+            mask="d0/M0/0000" [showMaskTyped]="true">                             
+        </mat-form-field>
+        <ng-container *ngIf="productsForm.controls.date.touched">
+            <span *ngIf="productsForm.controls.date.errors"
+            class="alert alert-danger" role="alert">
+                Data é obrigatório!
+            </span>                            
+        </ng-container>
+    </form>
+    <button mat-flat-button (click)="productCreate2()" color="primary"
+    [disabled]="!productsForm.valid">Salvar</button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
+
+

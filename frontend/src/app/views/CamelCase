@@ -1,0 +1,29 @@
+É uma boa prática na hora da escrita do código!
+
+Temos 2 classificações...
+
+UpperCamelCase: Utilizadas em classes e interface
+Exemplos: "export interface Product"
+          " void FixedUpdate() {}
+          "class ClienteBanco {
+              constructor(primeiroNome, cpf) {
+                  this.primeiroNome = primeiroNome;
+                  this.cpf = cpf;
+              }
+          }
+
+lowerCamelCase: Utilizamos em variáveis, atributos e métodos.
+Exemplos: "private float moveSpeed"
+          "public nameAndSurname"
+          "productCreate(): void {}
+          exibirPrimeiroNome() {
+              console.log(this.primeiroNome)
+          }
+          
+    Métodos => a primeira letra deve ser minúscula, depois seguida da regra camelCase.Normalmente os nomes devem ser substantivos.
+    Interface => a primeira letra deve ser maiúscula, seguida da regra camelCase.Normalmente os nomes devem ser adjetivos.
+    Variáveis => semelhante aos métodos, porém recomendam-se nomes curtos e significativos.
+    Constantes => Devem ser declaradas usando letras maiúsculas separadas por underline (_).
+          
+
+          
